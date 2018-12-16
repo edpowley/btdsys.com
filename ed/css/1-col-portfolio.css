@@ -18,6 +18,12 @@ body {
   margin-bottom: 15px;
 }
 
-.row {
-  height: 100vh;
+.page {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.light-text {
+  color: #d1d5d9;
 }

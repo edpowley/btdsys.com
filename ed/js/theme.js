@@ -1,6 +1,19 @@
 (function($) {
   "use strict"; // Start of use strict
 
+  // Navigation
+  $('.page').each(function() {
+    var id = $(this).attr('id');
+    var title = $(this).find('h3').text();
+    if (title != "")
+    {
+      var li = $('<li class="nav-item">');
+      var a = $('<a class="nav-link js-scroll-trigger">').attr('href', '#' + id).text(title);
+      li.append(a);
+      $('#navbarList').append(li);
+    }
+  })
+
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -8,7 +21,7 @@
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
         $('html, body').animate({
-          scrollTop: (target.offset().top - 70)
+          scrollTop: (target.offset().top - 56)
         }, 1000, "easeInOutExpo");
         return false;
       }
